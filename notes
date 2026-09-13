@@ -1,7 +1,7 @@
 LABERINTH is run from the terminal.
 To recreate Laberinth:
-Install ImageMagick ॐ Safe
-Install FFmpeg ॐ Safe
+Install ImageMagick ॐ Safe https://imagemagick.org/magick++/#gsc.tab=0
+Install FFmpeg ॐ Safe https://ffmpeg.org/
 Edit the system environment variables
 Environment variables...
 Edit.. Path ImageMagick
