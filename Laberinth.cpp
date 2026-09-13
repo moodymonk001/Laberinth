@@ -56,7 +56,7 @@ class identifier
 
 abstractions
 
-robriks
+rubriks
 imageidentifiers
 pixelation
 
