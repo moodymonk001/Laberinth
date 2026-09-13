@@ -1,0 +1,17 @@
+LABERINTH © 2026
+C++ Data Mining Algortihm
+Inquiries: moodymonk001@gmail.com
+
+References:
+@misc{vasiliossyrakis2026,	author = {Vasilios Syrakis}, 	title = {I was laid off by Atlassian}, 	year = {2026}, month = {May}, 	howpublished = {Video}, journal = {YouTube}, 	url = {https://youtu.be/55pTFVoclvE?si=OUxH0ig1ISuuPGwV} }
+@misc{citadelsecurities2026,	author = {Citadel Securities}, 	title = {Juan Alday: Why C++ Wins in Finance}, 	year = {2026}, month = {April}, 	howpublished = {Video}, journal = {YouTube}, 	url = {https://youtu.be/InLxLEqg_fs?si=ha0CZ5BBsWWAPxF1} }
+@book{schlossnagle2006scalable,  title={Scalable internet architectures},  author={Schlossnagle, Theo},  year={2006},  publisher={Pearson Education India}}
+@book{iglberger2022c++,  title={C++ Software Design},  author={Iglberger, Klaus},  year={2022},  publisher={" O'Reilly Media, Inc."}}
+@book{weiss2012data,  title={Data structures \& algorithm analysis in C++},  author={Weiss, Mark A},  year={2012},  publisher={Pearson Education}}
+@book{williams2019c++,  title={C++ concurrency in action},  author={Williams, Anthony},  year={2019},  publisher={Simon and Schuster}}
+
+Software Libraries:
+ImageMagick Studio LLC. (2024). ImageMagick. Retrieved from https://imagemagick.org
+FFmpeg Developers. (2016). ffmpeg tool (Version be1d324) [Software]. Available from http://ffmpeg.org/
+
+
