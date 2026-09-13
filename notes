@@ -6,8 +6,11 @@ Edit the system environment variables
 Environment variables...
 Edit.. Path ImageMagick
 Edit.. Path FFmpeg
+CMD 
+Manipulate images/videos
+Use pixel mapping to search for specific pixel arrays within the files on your computer
+Attach to online search engine...
 *********************************************************************************************
-
 ImageMagick (IM)
 runtime can always be the same since jpeg/png format will always be resized to the same dimensions
 that means the image's memory size will always stay the same
@@ -65,7 +68,6 @@ The subimage search feature in ImageMagick can be quite slow due to its iterativ
 If the -subimage-search option is not enabled, ImageMagick performs a direct pixel-by-pixel comparison between the two images, starting from their page offset, typically the top-left corners. In cases where the images differ in size, the smaller image is aligned with the larger one. The extra areas in the smaller image are treated as virtual pixels. These virtual pixels can be processed according to the chosen virtual pixel method, which influences how unmatched regions are handled in the comparison. Consequently, the comparison metrics may be affected by these additional areas, potentially impacting the overall similarity assessment. To only compare authentic pixels, use -define compare:virtual-pixels=false.
 
 COMPARE function (ImageMagick)
-I am currently at ~8 minute runtime - SIMPLE BUT IT WORKS. CONTINUE. THIS CAN BE OPTIMIZED WITH A STRONG GRAPHIC CARD/CLOUD PROCESSING/FFT BOOSTER
 https://github.com/ImageMagick/ImageMagick/discussions/3950
 -subimage-search
 NCC Normalized Cross-Correlation
@@ -76,17 +78,7 @@ magick compare -metric NCC -subimage-search frame0022.png output.png similarity.
 
 https://www.fftw.org/index.html // to speed up processing time with efficient fft calculations
 
-
-the rest is post image processing bullshit
-
-BUILD LABERINTH AS A SINGLE FILE
-
-09122026
 To compare images across subfolders using ImageMagick, you can loop through the directories using a command-line script. ImageMagick's magick compare command requires two specific image paths to compare them and output a visual difference imag
-
-This has to be done manually since the specifc image path can't jump into subfolders
-
-It is possible (Search: magick compare image in subfolders):
 
 # Define your folders
 $folder1 = "C:\path\to\first_parent_folder"
@@ -111,17 +103,6 @@ Get-ChildItem -Path $folder1 -Recurse -File | ForEach-Object {
     }
 }
 
-For cloud/database, simply add everything into the same folder
-
-Now, how to create concurrency? Threading yes...but on command line? all at once
-BUILD THEM IN COMPILER
-TOLD YOU SO
-
 Exponential Concurrency
 Metaphor
 EE Parallel vs Series concept
-Open Parallel Folders for Subfolders EASY multiple threads at compile time for inside the folder
-
-or Just save everything in a single folder hehe
-
-MUY BIEN
