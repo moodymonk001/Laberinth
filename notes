@@ -13,7 +13,7 @@ Pixel RGB values can be manipulated in RGB values at the pixel level.
 Changes allowed in the frequency domain. Real or seamlessly manipulated?
 Attach to online search queries...ॐ Dangerous
 *********************************************************************************************
-Keywords: Pixel array indexing FFT Digital Signal Processing
+Keywords: Pixel array indexing FFT Digital Signal Processing C++ Abstractions
 *********************************************************************************************
 ImageMagick (IM)
 runtime can always be the same since jpeg/png format will always be resized to the same dimensions
