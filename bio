@@ -1,6 +1,10 @@
 LABERINTH © 2026
 C++ Data Mining Algortihm
-Inquiries: moodymonk001@gmail.com
+NON-AI Data Miner - Visual query search tool
+I present the foundation of a modern, pixel-interpolation-based data miner.
+Computers currently have great text interpretation/scan. Visual data interpretation still needs work.
+
+Consulting Inquiries: moodymonk001@gmail.com
 
 References:
 @misc{vasiliossyrakis2026,	author = {Vasilios Syrakis}, 	title = {I was laid off by Atlassian}, 	year = {2026}, month = {May}, 	howpublished = {Video}, journal = {YouTube}, 	url = {https://youtu.be/55pTFVoclvE?si=OUxH0ig1ISuuPGwV} }
