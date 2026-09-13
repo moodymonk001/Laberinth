@@ -1,0 +1,127 @@
+LABERINTH is run from the terminal.
+To recreate Laberinth:
+Install ImageMagick
+Install FFmpeg
+Edit the system environment variables
+Environment variables...
+Edit.. Path ImageMagick
+Edit.. Path FFmpeg
+*********************************************************************************************
+
+ImageMagick (IM)
+runtime can always be the same since jpeg/png format will always be resized to the same dimensions
+that means the image's memory size will always stay the same
+
+build and compile the image/movie/file in compiler
+runtime should be dedicated to the query of the database/file set/directory🕉ॐ🕉
+
+-size width[xheight][+offset]
+Set the width and height of the image.
+Use this option to specify the width and height of raw images whose dimensions are unknown such as GRAY, RGB, or CMYK. In addition to width and height, use -size with an offset to skip any header information in the image or tell the number of colors in a MAP image file, (e.g. -size 640x512+256).
+
+ARRAY INDEXING concept
+
+The problem is that IM is not designed to handle video, but static images or
+small sequences of images. 
+For processing on a small sequence of frames however it really can't be
+beat.  In fact just about every Linux Video manipulation program uses
+ImageMagick to generate titles, fancy scene changes, and other effects to
+complete the post-processing development of a larger video development.  The
+process however is kept to small video sequences.
+
+Video to Frames
+
+Both "mplayer" and "mencode" are more efficient at converting video into a series
+of frames than IM is.  On top of this is can handle just about any video
+(and audio) codec available.
+
+For example to grab 5 frames from 1 1/2 minutes into a video, scaled to
+320x240, you can use...
+
+mplayer file.mov -vf scale=320x240 -ss 01:30 -ao null \
+  -vo png:z=3 -frames 5
+
+
+To compare the contents of two objects in C++, you must overload the equality operator (==) or use C++20's default spaceship operator (<=>).
+
+Image Mapping
+"there is usally very little calculation needed to be performed by ImageMagick, as such 'image mapping' is in general very fast. It is also repeatable, as you can apply the same very complex map, to any number of images, to get the exact same modification. That is, to say you can apply it to a whole directory of images very quickly."
+"having to re-calculate the distortion over and over. The solution is to pre-calculate your distortion, and save it as special look-up table (LUT) in the form of a grayscale image. That is, for each output pixel, we look-up the LUT, then use that value to look-up the color from the source image. That is, three steps are needed.
+1.Look-up up each destination pixel in the LUT
+2.Map the LUT value to the source image location (two methods)
+3.Look-up the color from the source image"
+
+By default, $ magick identify provides the following output:
+Filename[frame #] image-format widthxheight page-widthxpage-height+x-offset+y-offset colorspace user-time elapsed-time
+
+magick frame0022.png \ \( -size 50x50 xc:none -draw "stroke gray stroke width 1 line 0,0 50,0 line 0,0 0,50" -write mpr:grid \) \ -tile mpr:grid -draw "color 0,0 reset" output.png
+
+If you want to cut out a section that is 400 pixels wide by 300 pixels high, starting 100 pixels from the left and 50 pixels from the top:bashmagick input.jpg -crop 400x300+100+50 +repage output.jpg
+
+Image comparisons
+
+The subimage search feature in ImageMagick can be quite slow due to its iterative nature. However, if your release of ImageMagick includes FFTW (Fastest Fourier Transform in the West) support and your metric is DPC, MSE, NCC, RMSE, PHASE, or PSNR, you can expect an order of magnitude speed increase in processing time. For discussion, refer to Accelerated Subimage-search Compare.
+
+If the -subimage-search option is not enabled, ImageMagick performs a direct pixel-by-pixel comparison between the two images, starting from their page offset, typically the top-left corners. In cases where the images differ in size, the smaller image is aligned with the larger one. The extra areas in the smaller image are treated as virtual pixels. These virtual pixels can be processed according to the chosen virtual pixel method, which influences how unmatched regions are handled in the comparison. Consequently, the comparison metrics may be affected by these additional areas, potentially impacting the overall similarity assessment. To only compare authentic pixels, use -define compare:virtual-pixels=false.
+
+COMPARE function (ImageMagick)
+I am currently at ~8 minute runtime - SIMPLE BUT IT WORKS. CONTINUE. THIS CAN BE OPTIMIZED WITH A STRONG GRAPHIC CARD/CLOUD PROCESSING/FFT BOOSTER
+https://github.com/ImageMagick/ImageMagick/discussions/3950
+-subimage-search
+NCC Normalized Cross-Correlation
+RSME Root Mean Square Error
+PSNR Peak Signal-to-Noise Ratio
+Handles the pixel interpolation between the two (different sized) images
+magick compare -metric NCC -subimage-search frame0022.png output.png similarity.png
+
+https://www.fftw.org/index.html // to speed up processing time with efficient fft calculations
+
+
+the rest is post image processing bullshit
+
+BUILD LABERINTH AS A SINGLE FILE
+
+09122026
+To compare images across subfolders using ImageMagick, you can loop through the directories using a command-line script. ImageMagick's magick compare command requires two specific image paths to compare them and output a visual difference imag
+
+This has to be done manually since the specifc image path can't jump into subfolders
+
+It is possible (Search: magick compare image in subfolders):
+
+# Define your folders
+$folder1 = "C:\path\to\first_parent_folder"
+$folder2 = "C:\path\to\second_parent_folder"
+$outputFolder = "C:\path\to\difference_output"
+
+# Create output folder if it doesn't exist
+New-Item -ItemType Directory -Force -Path $outputFolder
+
+# Get all files from the first folder
+Get-ChildItem -Path $folder1 -Recurse -File | ForEach-Object {
+    # Get the relative path of the file
+    $relativePath = $_.FullName.Substring($folder1.Length)
+    $targetFile = Join-Path $folder2 $relativePath
+
+    # If the matching file exists in the second folder, compare them
+    if (Test-Path $targetFile) {
+        $outputFile = Join-Path $outputFolder ($_.BaseName + "_diff" + $_.Extension)
+        
+        # Run ImageMagick compare
+        magick compare "$($_.FullName)" "$targetFile" "$outputFile"
+    }
+}
+
+For cloud/database, simply add everything into the same folder
+
+Now, how to create concurrency? Threading yes...but on command line? all at once
+BUILD THEM IN COMPILER
+TOLD YOU SO
+
+Exponential Concurrency
+Metaphor
+EE Parallel vs Series concept
+Open Parallel Folders for Subfolders EASY multiple threads at compile time for inside the folder
+
+or Just save everything in a single folder hehe
+
+MUY BIEN
