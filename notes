@@ -1,15 +1,3 @@
-LABERINTH is run from the terminal.
-To recreate Laberinth:
-Install ImageMagick
-Install FFmpeg
-Edit the system environment variables
-Environment variables...
-Edit.. Path ImageMagick
-Edit.. Path FFmpeg
-CMD 
-Manipulate images/videos
-Use pixel mapping to search for specific pixel arrays within the files on your computer
-Attach to online search engine...
 *********************************************************************************************
 ImageMagick (IM)
 runtime can always be the same since jpeg/png format will always be resized to the same dimensions
