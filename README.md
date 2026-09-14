@@ -11,6 +11,7 @@ Archive
 Cloud Storage
 Database Query
 Digital Data >TB
+Face Recognition
 Finance
 IT Security
 Networking
