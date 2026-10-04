@@ -68,7 +68,7 @@ concurrency
 
 Exactly querybuild
 
-Build at compile time // Avoid run time because it was take up the processsing power trying to fill memory blocks for the query while calculating the "life" of each bunny query
+Build at compile time // Avoid run time because it takes up the processing power by trying to fill memory blocks for the query while calculating the "life" of each bunny query
 
 command1& command2
 magick frame0022.png - crop 300x200 + 409 + 861 + repage output212.png & magick frame0024.png - crop 300x200 + 409 + 861 + repage output213.png
