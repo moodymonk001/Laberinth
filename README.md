@@ -10,7 +10,7 @@ Applications:
 Archive
 Cloud Storage
 Database Query
-Digital Data >TB
+Digital Data TB
 Face Recognition
 Finance
 IT Security
